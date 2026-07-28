@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router";
 import bgImg from "../assets/theme.jpg";
 

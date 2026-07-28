@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -9,7 +8,10 @@ export default function App() {
       <header>
         <nav>
           <Link to="/">#PASSALONG</Link>
-          <Link to="/about">About</Link>
+          <div className="right-nav">
+            <Link to="/about">About</Link>
+            <Link to="/books">Books</Link>
+          </div>
         </nav>
       </header>
       <Routes>

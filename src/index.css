@@ -26,6 +26,16 @@ header {
   padding-block: 10px;
 }
 
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav .right-nav {
+  display: flex;
+  align-items: center;
+}
+
 header .site-logo {
   color: black;
   margin-right: auto;
