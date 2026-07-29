@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Books from "./pages/Books";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="about" element={<About />}></Route>
+        <Route path="books" element={<Books />} />
       </Routes>
     </BrowserRouter>
   );
