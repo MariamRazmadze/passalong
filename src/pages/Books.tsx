@@ -1,7 +1,8 @@
 import "../api/server";
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
-type Book = {
+export type Book = {
   id: string;
   title: string;
   author: string;
@@ -20,16 +21,22 @@ export default function Books() {
   }, []);
   const bookElements = books.map((book) => (
     <div key={book.id} className="book-tile">
-      <img src={book.imageUrl} />
-      <div className="van-info">
-        <h3>{book.title}</h3>
-        <p>
-          ${book.price}
-          <span>/day</span>
-        </p>
-      </div>
-      <i className={`van-type ${book.type} selected`}>{book.type}</i>
+      <Link to={`/books/${book.id}`}>
+        <img src={book.imageUrl} />
+        <div className="book-info">
+          <h3>{book.title}</h3>
+          <p>
+            ${book.price}
+            <span>/day</span>
+          </p>
+        </div>
+        <i className={`book-type ${book.type} selected`}>{book.type}</i>
+      </Link>
     </div>
   ));
-  return <div>{bookElements}</div>;
+  return (
+    <div className="book-list-container">
+      <div className="book-list">{bookElements}</div>
+    </div>
+  );
 }
