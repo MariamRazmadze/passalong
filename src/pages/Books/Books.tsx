@@ -1,4 +1,4 @@
-import "../api/server";
+import "../../api/server";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
