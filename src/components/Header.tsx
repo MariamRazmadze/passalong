@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header>
       <nav>
-        <Link to="/">#PASSALONG</Link>
+        <Link to="/">#PASSALONGE</Link>
         <div className="right-nav">
           <Link to="/about">About</Link>
           <Link to="/books">Books</Link>
