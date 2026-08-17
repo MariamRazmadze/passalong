@@ -267,9 +267,6 @@ i[class*="book-type-"] {
   text-decoration: none;
 }
 
-.book-detail-container .back-button:visited {
-}
-
 .book-detail-container .back-button span {
   text-decoration: underline;
 }

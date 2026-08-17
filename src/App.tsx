@@ -8,6 +8,8 @@ import Income from "./pages/Host/Income";
 import Reviews from "./pages/Host/Reviews";
 import Layout from "./components/Layout";
 import HostLayout from "./pages/Host/HostLayout";
+import HostBooks from "./pages/Host/HostBooks";
+import HostBookDetail from "./pages/Host/HostBookDetail";
 
 export default function App() {
   return (
@@ -22,6 +24,8 @@ export default function App() {
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
+            <Route path="books" element={<HostBooks />} />
+            <Route path="books/:id" element={<HostBookDetail />} />
           </Route>
         </Route>
       </Routes>
