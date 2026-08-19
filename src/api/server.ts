@@ -12,6 +12,7 @@ createServer({
     book: Model,
   },
   seeds(server) {
+    // @ts-ignore
     server.create("book", {
       id: "1",
       title: "Harry Potter and the Philosopher's Stone",
@@ -22,8 +23,10 @@ createServer({
         "Harry Potter discovers he is a wizard and begins his first year at Hogwarts School of Witchcraft and Wizardry.",
       imageUrl: firstImage,
       type: "buy",
+      hostId: "123",
     });
 
+    // @ts-ignore
     server.create("book", {
       id: "2",
       title: "Harry Potter and the Chamber of Secrets",
@@ -34,8 +37,10 @@ createServer({
         "Harry returns to Hogwarts where a mysterious chamber has been opened, putting students in danger.",
       imageUrl: secondImage,
       type: "borrow",
+      hostId: "123",
     });
 
+    // @ts-ignore
     server.create("book", {
       id: "3",
       title: "Harry Potter and the Prisoner of Azkaban",
@@ -46,8 +51,10 @@ createServer({
         "Harry learns the truth about Sirius Black and uncovers secrets from his parents' past.",
       imageUrl: thirdImage,
       type: "gift",
+      hostId: "456",
     });
 
+    // @ts-ignore
     server.create("book", {
       id: "4",
       title: "Harry Potter and the Goblet of Fire",
@@ -58,8 +65,10 @@ createServer({
         "Harry is unexpectedly entered into the dangerous Triwizard Tournament.",
       imageUrl: fourthImage,
       type: "buy",
+      hostId: "789",
     });
 
+    // @ts-ignore
     server.create("book", {
       id: "5",
       title: "Harry Potter and the Order of the Phoenix",
@@ -70,8 +79,10 @@ createServer({
         "Harry forms Dumbledore's Army while the Ministry refuses to believe Voldemort has returned.",
       imageUrl: fifthImage,
       type: "borrow",
+      hostId: "789",
     });
 
+    // @ts-ignore
     server.create("book", {
       id: "6",
       title: "Harry Potter and the Half-Blood Prince",
@@ -82,8 +93,10 @@ createServer({
         "Dumbledore prepares Harry for the final battle by revealing Voldemort's past.",
       imageUrl: sixthImage,
       type: "buy",
+      hostId: "123",
     });
 
+    // @ts-ignore
     server.create("book", {
       id: "7",
       title: "Harry Potter and the Deathly Hallows",
@@ -94,6 +107,7 @@ createServer({
         "Harry, Ron, and Hermione set out to destroy Voldemort's Horcruxes in the final installment.",
       imageUrl: seventhImage,
       type: "buy",
+      hostId: "123",
     });
   },
 
@@ -106,6 +120,19 @@ createServer({
 
     this.get("/books/:id", (schema, request) => {
       return schema.find("book", request.params.id);
+    });
+
+    this.get("/host/books", (schema, request) => {
+      // Hard-code the hostId for now
+      // @ts-ignore
+      return schema.where("book", { hostId: "123" });
+    });
+
+    this.get("/host/books/:id", (schema, request) => {
+      // Hard-code the hostId for now
+      const id = request.params.id;
+      // @ts-ignore
+      return schema.where("book", { id, hostId: "123" });
     });
   },
 });
